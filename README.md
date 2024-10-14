@@ -2,7 +2,11 @@
 
 ## Fragen
 
--poetry.lock mit auf Repo pushen?
+- poetry.lock mit auf Repo pushen?
+
+- Test-/Trainingsdaten im .gz Dateiormat?
+
+-
 
 # Dev Setup
 
