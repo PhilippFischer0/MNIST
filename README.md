@@ -6,6 +6,8 @@
 
 - Test-/Trainingsdaten im .gz Dateiormat?
 
+- Wie loss und accuracies optimieren? (Batches, LearningRate, Steps/Epochs)
+
 -
 
 # Dev Setup
