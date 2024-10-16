@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# https://yann.lecun.com/exdb/mnist/
+# from https://yann.lecun.com/exdb/mnist/
 def parse_mnist_data(
         idx_file_training_samples: str,
         idx_file_training_labels: str,
@@ -54,10 +54,10 @@ def plot_image(img: np.ndarray) -> plt.figure:
 
 class FeedForward:
     def __init__(self, fan_in: int, num_hidden: int, fan_out: int) -> None:
-        # matrizen und bias definieren
+        # define matrices
         self.layer_1_matrix = np.random.uniform(-1, 1, (fan_in, num_hidden)).astype(np.float32)
         self.layer_2_matrix = np.random.uniform(-1, 1, (num_hidden, fan_out)).astype(np.float32)
-
+        # define bias
         self.bias_1 = np.random.uniform(-1, 1, num_hidden).astype(np.float32)
         self.bias_2 = np.random.uniform(-1, 1, fan_out).astype(np.float32)
 
@@ -66,9 +66,9 @@ class FeedForward:
 
     def __call__(self, x: np.ndarray) -> np.ndarray:
         if len(x.shape) < 2:
-            # multiplikation mit matrix 1 (weights) -> bias addieren
+            # multiplication witht matrix 1 (weights) -> add bias
             xl1 = x @ self.layer_1_matrix + self.bias_1
-            # aktvierungsfunktion (np.tanh) anwenden
+            # activation function (np.tanh) anwenden
             xl1a = np.tanh(xl1)
             # multiplikation mit matrix 2 (weights) -> bias addieren
             xl2 = xl1a @ self.layer_2_matrix + self.bias_2
@@ -78,6 +78,7 @@ class FeedForward:
             return xl2n
         else:
         # Bonus: input 2-dimensional
+            
             pass
 
 def foo():
