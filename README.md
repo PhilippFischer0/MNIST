@@ -17,3 +17,4 @@ Arm git filter to remove notebook output:
 ```bash
 git config --local include.path ../.gitconfig
 ```
+# diy-mnist-nn
