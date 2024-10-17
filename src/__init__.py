@@ -65,31 +65,17 @@ class FeedForward:
         return np.exp(x)/np.sum(np.exp(x))
 
     def __call__(self, x: np.ndarray) -> np.ndarray:
-        # input 1-dimensional
-        if len(x.shape) < 2:
-            # multiplication witht matrix 1 (weights) -> add bias
-            xl1 = x @ self.layer_1_matrix + self.bias_1
-            # activation function (np.tanh) anwenden
-            xl1a = np.tanh(xl1)
-            # multiplikation mit matrix 2 (weights) -> bias addieren
-            xl2 = xl1a @ self.layer_2_matrix + self.bias_2
-            # normalisierung mit softmax
-            xl2n = self.softmax(xl2)
 
-            return xl2n
+        # multiplication witht matrix 1 (weights) -> add bias
+        xl1 = x @ self.layer_1_matrix + self.bias_1
+        # activation function (np.tanh) anwenden
+        xl1a = np.tanh(xl1)
+        # multiplikation mit matrix 2 (weights) -> bias addieren
+        xl2 = xl1a @ self.layer_2_matrix + self.bias_2
+        # normalisierung mit softmax
+        xl2n = self.softmax(xl2)
 
-        # Bonus: input 2-dimensional (n_batches, fan_in)
-        else:
-            # multiplication witht matrix 1 (weights) -> add bias
-            xl1 = x @ self.layer_1_matrix + self.bias_1
-            # activation function (np.tanh) anwenden
-            xl1a = np.tanh(xl1)
-            # multiplikation mit matrix 2 (weights) -> bias addieren
-            xl2 = xl1a @ self.layer_2_matrix + self.bias_2
-            # normalisierung mit softmax
-            xl2n = self.softmax(xl2)
-
-            return xl2n
+        return xl2n
 
 def foo():
     print("hallo blub")
