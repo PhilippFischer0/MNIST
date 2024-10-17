@@ -15,7 +15,7 @@ def test_forward():
     assert sum(np.round(out, 9)) == 1
 
 def test_2dim_forward():
-    x = np.random.uniform(0, 10, (20, 3))
+    x = np.random.uniform(0, 10, (3, 20))
 
     FF = src.FeedForward(20, 1024, 5)
     out = FF(x)

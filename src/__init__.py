@@ -78,10 +78,10 @@ class FeedForward:
 
             return xl2n
 
-        # Bonus: input 2-dimensional
+        # Bonus: input 2-dimensional (n_batches, fan_in)
         else:
             # multiplication witht matrix 1 (weights) -> add bias
-            xl1 = x.T @ self.layer_1_matrix + self.bias_1
+            xl1 = x @ self.layer_1_matrix + self.bias_1
             # activation function (np.tanh) anwenden
             xl1a = np.tanh(xl1)
             # multiplikation mit matrix 2 (weights) -> bias addieren
